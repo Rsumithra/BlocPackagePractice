@@ -1,11 +1,10 @@
-import 'package:blocpracticepattern/contacts/contactone.dart';
-import 'package:blocpracticepattern/contacts/contactthree.dart';
-import 'package:blocpracticepattern/contacts/contacttwo.dart';
+import 'package:blocpracticepattern/screens/contactfour.dart';
+import 'package:blocpracticepattern/screens/contactone.dart';
+import 'package:blocpracticepattern/screens/contactthree.dart';
+import 'package:blocpracticepattern/screens/contacttwo.dart';
 import 'package:flutter/material.dart';
 
-import 'contacts/contactfour.dart';
-
-void main() => runApp(Myapp());
+void main() => runApp(const Myapp());
 
 class Myapp extends StatefulWidget {
   const Myapp({Key? key}) : super(key: key);
@@ -21,8 +20,8 @@ class _MyappState extends State<Myapp> {
         home: DefaultTabController(
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Contact App'),
-          bottom: TabBar(
+          title: const Text('Contact App'),
+          bottom: const TabBar(
             tabs: [
               Tab(text: "Contact1"),
               Tab(text: "Contact2"),
@@ -35,7 +34,7 @@ class _MyappState extends State<Myapp> {
             ],
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children: [Contactone(), Contacttwo(), Contactthree(), ContactFour()],
         ),
       ),
