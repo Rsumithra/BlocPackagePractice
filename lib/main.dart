@@ -1,7 +1,7 @@
-import 'package:blocpracticepattern/screens/contactfour.dart';
-import 'package:blocpracticepattern/screens/contactone.dart';
-import 'package:blocpracticepattern/screens/contactthree.dart';
-import 'package:blocpracticepattern/screens/contacttwo.dart';
+import 'package:blocpracticepattern/screens/tab_four.dart';
+import 'package:blocpracticepattern/screens/tab_one.dart';
+import 'package:blocpracticepattern/screens/tab_three.dart';
+import 'package:blocpracticepattern/screens/tab_two.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const Myapp());

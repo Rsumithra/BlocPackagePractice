@@ -3,17 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../models/contacts.dart';
 
-class Contactone extends StatefulWidget {
-  const Contactone({Key? key}) : super(key: key);
+class Contacttwo extends StatefulWidget {
+  const Contacttwo({Key? key}) : super(key: key);
 
   @override
-  State<Contactone> createState() => _ContactoneState();
+  State<Contacttwo> createState() => _ContacttwoState();
 }
 
-class _ContactoneState extends State<Contactone> {
+class _ContacttwoState extends State<Contacttwo> {
   ContactblocBloc contactblocBloc = ContactblocBloc();
-  late List<Contacts> firstset=[];
-
+  List<Contacts> secondset = [];
   @override
   void initState() {
     contactblocBloc.add(FetchContactData());
@@ -30,17 +29,23 @@ class _ContactoneState extends State<Contactone> {
           if (state is Contactblocloading) {
             return const Center(child: CircularProgressIndicator.adaptive());
           } else if (state is ContactFetchData) {
+            for (int i = 25; i < 50; i++) {
+              secondset.add(state.contacts[i]);
+            }
             return ListView.builder(
-                itemCount: state.contacts.length,
+                itemCount: secondset.length,
                 itemBuilder: (context, index) {
-                  Contacts con = state.contacts[index];
+                  Contacts con = secondset[index];
                   return Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15.0),
                     ),
                     elevation: 10,
                     child: ListTile(
-                        title: Text(con.name), subtitle: Text(con.contacts)),
+                      title: Text(con.name),
+                      subtitle: Text(con.contacts),
+                      trailing: Image.network("https://picsum.photos/200/300"),
+                    ),
                   );
                 });
           } else if (state is ContactError) {
