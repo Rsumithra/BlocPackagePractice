@@ -14,7 +14,9 @@ class Contactblocloading extends ContactblocState {
 class ContactFetchData extends ContactblocState {
   List<Contacts> contacts;
 
-  ContactFetchData({required this.contacts});
+  ContactFetchData({
+    required this.contacts,
+  });
 
   List<Object?> get props => throw UnimplementedError();
 }

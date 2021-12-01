@@ -4,12 +4,12 @@ import '../models/contacts.dart';
 import '../network/api_call.dart';
 
 class ContactsRespository {
-  final Api_call _provider = Api_call();
+  final Apicall _provider = Apicall();
 
   Future<List<Contacts>> getContacts() async {
     List<Contacts> contacts = [];
     try {
-      final response = await _provider.get(Constants.contacts_url);
+      final response = await _provider.get(Constants.contactsurl);
       contacts = contactsFromJson(response);
       return contacts;
     } on Exception {

@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
+import 'package:blocpracticepattern/constants/contants.dart';
 import '../models/contacts.dart';
 import 'package:blocpracticepattern/repository/contactsrespository.dart';
-
 
 import 'package:meta/meta.dart';
 
@@ -19,7 +19,7 @@ class ContactblocBloc extends Bloc<ContactblocEvent, ContactblocState> {
         try {
           contactdata = await contactsRespository.getContacts();
           if (contactdata.isEmpty) {
-            emit(ContactError(msg: "No data Available"));
+            emit(ContactError(msg: Constants.nodata));
           } else {
             emit(ContactFetchData(contacts: contactdata));
           }
